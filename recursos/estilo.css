@@ -19,13 +19,13 @@ header {
 }
 
 h1 {
-    font-size: 2em; /* Ajuste del tamaño del encabezado para dispositivos móviles */
+    font-size: 2.5em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     margin: 0;
 }
 
 p {
-    font-size: 1em; /* Ajuste del tamaño del párrafo para dispositivos móviles */
+    font-size: 1.2em;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
     margin: 10px 0;
 }
@@ -33,8 +33,8 @@ p {
 /* Estilos para la barra de navegación (nav) */
 nav {
     display: flex;
-    flex-wrap: wrap; /* Permite que los botones se envuelvan en dispositivos más pequeños */
-    justify-content: center; /* Centra los elementos horizontalmente */
+    flex-wrap: wrap; /* Permite que los botones se envuelvan en dispositivos pequeños */
+    justify-content: center;
     background-color: #e74c3c;
     padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
@@ -46,25 +46,19 @@ nav button {
     border: none;
     background-color: #d35400;
     color: #fff;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s, color 0.3s; /* Agregué color a las transiciones */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s, color 0.3s;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    font-size: 1em; /* Ajuste del tamaño del botón para dispositivos móviles */
-    margin: 5px; /* Ajuste del margen entre botones para dispositivos móviles */
+    font-size: 1.2em;
+    margin: 0 10px;
 }
 
 nav button:active,
-nav button:focus {
+nav button:focus,
+nav button:hover {
     transform: scale(1.2);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 1);
     background-color: #9b2c00;
-}
-
-nav button:hover {
-    background-color: #a04000;
-    transform: scale(1.2);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 1);
-    color: #fff;
 }
 
 /* Estilos para las secciones */
@@ -106,13 +100,13 @@ footer {
 
 /* Estilos para la sección que ocupa todo el ancho */
 #contenido {
-    width: calc(100% - 20px); /* Ajuste del ancho del contenedor para dispositivos móviles */
+    width: calc(100% - 40px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* Estilo para el título expandido */
 #contenido.expandido h2 {
-    font-size: 2em; /* Ajuste del tamaño del encabezado expandido para dispositivos móviles */
+    font-size: 2.5em;
     color: #fff;
     border-bottom: 2px solid #fff;
     padding-bottom: 10px;
@@ -121,22 +115,21 @@ footer {
 }
 
 #contenido.expandido p {
-    font-size: 1em; /* Ajuste del tamaño del párrafo expandido para dispositivos móviles */
+    font-size: 1.2em;
 }
 
 /* Estilo para la foto en Datos Personales */
-
 #datosPersonales {
     position: relative;
 }
 
 #fotoContainer {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    position: relative;
+    margin: 20px auto; /* Centra la foto */
     opacity: 0;
     transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
-    width: 250px; /* Ajusta el ancho del contenedor de la foto para dispositivos móviles */
+    width: 100%;
+    max-width: 400px;
     height: auto;
     overflow: hidden;
     border-radius: 5px;
@@ -160,7 +153,6 @@ footer {
 #interesContainer,
 #bienvenidoContainer {
     display: flex;
-    flex-wrap: wrap; /* Permite que las imágenes se envuelvan en dispositivos más pequeños */
     justify-content: center;
     align-items: center;
     margin-top: 20px;
@@ -172,4 +164,24 @@ footer {
 #bienvenidoContainer img {
     max-width: 100%;
     height: auto;
+}
+
+/* Media Query para dispositivos móviles */
+@media only screen and (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Cambia la dirección de la flexbox a columna */
+        align-items: center; /* Centra los elementos en la columna */
+    }
+
+    nav button {
+        margin: 5px;
+    }
+
+    footer {
+        display: none; /* Oculta el footer en dispositivos móviles */
+    }
+
+    #fotoContainer {
+        max-width: 100%;
+    }
 }
