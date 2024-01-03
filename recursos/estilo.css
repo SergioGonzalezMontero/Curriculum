@@ -4,7 +4,9 @@ body {
     color: #fff;
     margin: 0;
     padding: 0;
-    transition: background-color 0.5s; 
+    transition: background-color 0.5s;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /* Estilos para el encabezado (header) */
@@ -17,64 +19,63 @@ header {
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 2em; /* Ajuste del tamaño del encabezado para dispositivos móviles */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    margin: 0; 
+    margin: 0;
 }
 
 p {
-    font-size: 1.2em;
+    font-size: 1em; /* Ajuste del tamaño del párrafo para dispositivos móviles */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-    margin: 10px 0; 
+    margin: 10px 0;
 }
 
 /* Estilos para la barra de navegación (nav) */
 nav {
     display: flex;
-    justify-content: center; 
+    flex-wrap: wrap; /* Permite que los botones se envuelvan en dispositivos más pequeños */
+    justify-content: center; /* Centra los elementos horizontalmente */
     background-color: #e74c3c;
     padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 nav button {
-    padding: 12px; 
+    padding: 12px;
     cursor: pointer;
     border: none;
     background-color: #d35400;
     color: #fff;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s, color 0.3s; /* Agregué color a las transiciones */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    font-size: 1.2em;
-    margin: 0 10px; 
+    font-size: 1em; /* Ajuste del tamaño del botón para dispositivos móviles */
+    margin: 5px; /* Ajuste del margen entre botones para dispositivos móviles */
 }
 
 nav button:active,
 nav button:focus {
-    transform: scale(1.2); 
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 1); 
-    background-color: #9b2c00; 
+    transform: scale(1.2);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 1);
+    background-color: #9b2c00;
 }
 
 nav button:hover {
     background-color: #a04000;
-    transform: scale(1.2); 
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 1); 
-    color: #fff; 
+    transform: scale(1.2);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 1);
+    color: #fff;
 }
 
-
-
-
+/* Estilos para las secciones */
 section {
-    margin: 20px auto; /* Centramos las secciones */
+    margin: 20px auto;
     display: none;
     background-color: #333;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s, width 0.3s; /* Agregamos una transición para la transformación y el ancho */
-    max-width: 800px; /* Ajustamos el ancho máximo */
+    transition: transform 0.3s, width 0.3s;
+    max-width: 800px;
     width: 100%;
 }
 
@@ -105,13 +106,13 @@ footer {
 
 /* Estilos para la sección que ocupa todo el ancho */
 #contenido {
-    width: calc(100% - 40px);
+    width: calc(100% - 20px); /* Ajuste del ancho del contenedor para dispositivos móviles */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* Estilo para el título expandido */
 #contenido.expandido h2 {
-    font-size: 2.5em;
+    font-size: 2em; /* Ajuste del tamaño del encabezado expandido para dispositivos móviles */
     color: #fff;
     border-bottom: 2px solid #fff;
     padding-bottom: 10px;
@@ -120,10 +121,11 @@ footer {
 }
 
 #contenido.expandido p {
-    font-size: 1.2em;
+    font-size: 1em; /* Ajuste del tamaño del párrafo expandido para dispositivos móviles */
 }
 
 /* Estilo para la foto en Datos Personales */
+
 #datosPersonales {
     position: relative;
 }
@@ -133,69 +135,41 @@ footer {
     top: 20px;
     right: 20px;
     opacity: 0;
-    transition: opacity 1s ease-in-out, transform 0.5s ease-in-out; /* Agregamos una transición para la transformación */
-    width: 200px; /* Ajusta el ancho del contenedor según sea necesario */
+    transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
+    width: 250px; /* Ajusta el ancho del contenedor de la foto para dispositivos móviles */
     height: auto;
     overflow: hidden;
     border-radius: 5px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
-    z-index: 1; /* Asegura que la imagen esté por encima del contenido de la sección */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 1;
 }
 
 #fotoContainer img {
-    width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+    width: 100%;
     height: auto;
-    border-radius: 5px; /* Esquinas redondeadas para suavizar la apariencia */
+    border-radius: 5px;
 }
 
 #datosPersonales.expandido #fotoContainer {
     opacity: 1;
-    transform: scale(1.1); /* Efecto de escala al expandirse la sección */
+    transform: scale(1.1);
 }
 
-#formacionContainer {
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    margin-top: 20px; /* Ajusta el margen según sea necesario */
-}
-
-#formacionContainer img {
-    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-}
-
-#complementariaContainer {
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    margin-top: 20px; /* Ajusta el margen según sea necesario */
-}
-
-#complementariaContainer img {
-    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-}
-
-#interesContainer {
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    margin-top: 20px; /* Ajusta el margen según sea necesario */
-}
-
-#interesContainer img {
-    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-}
+#formacionContainer,
+#complementariaContainer,
+#interesContainer,
 #bienvenidoContainer {
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    margin-top: 20px; /* Ajusta el margen según sea necesario */
+    flex-wrap: wrap; /* Permite que las imágenes se envuelvan en dispositivos más pequeños */
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }
 
+#formacionContainer img,
+#complementariaContainer img,
+#interesContainer img,
 #bienvenidoContainer img {
-    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
+    max-width: 100%;
+    height: auto;
 }
