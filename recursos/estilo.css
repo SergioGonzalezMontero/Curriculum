@@ -1,0 +1,259 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1c1c1c;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Estilos para el encabezado (header) */
+header {
+    background-color: #c0392b; /* Rojo más oscuro */
+    color: #ecf0f1; /* Blanco antiguo */
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin: 0;
+}
+
+p {
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    margin: 10px 0;
+}
+
+/* Estilos para la barra de navegación (nav) */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Asegura que la barra de navegación esté por encima de otros elementos */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #e74c3c;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+nav button {
+    padding: 12px;
+    cursor: pointer;
+    border: none;
+    background-color: #d35400;
+    color: #fff;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s, color 0.3s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-size: 1.2em;
+    margin: 0 10px;
+	 flex: 1;
+}
+
+nav button:active,
+nav button:focus,
+nav button:hover {
+    transform: scale(1.2);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 1);
+    background-color: #9b2c00;
+}
+
+/* Estilos para las secciones */
+section {
+    margin: 20px auto;
+    display: none;
+    background-color: #333;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, width 0.3s;
+    max-width: 800px;
+    width: 100%;
+}
+
+h2 {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #c0392b;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Oculta todas las secciones, excepto la inicial */
+#datosPersonales,
+#formacionAcademica,
+#experienciaLaboral,
+#datosInteres,
+#gitHup {
+    display: none;
+}
+
+/* Estilos para la sección que ocupa todo el ancho */
+#contenido {
+    width: calc(100% - 40px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo para el título expandido */
+#contenido.expandido h2 {
+    font-size: 2.5em;
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+}
+
+#contenido.expandido p {
+    font-size: 1.2em;
+}
+
+/* Estilo para la foto en Datos Personales */
+#datosPersonales {
+    position: relative;
+	z-index: 2;
+}
+
+#fotoContainer {
+    position: relative;
+    margin: 20px auto; /* Centra la foto */
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+#fotoContainer img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+#datosPersonales.expandido #fotoContainer {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+#formacionContainer,
+#complementariaContainer,
+#interesContainer,
+#bienvenidoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#formacionContainer img,
+#complementariaContainer img,
+#interesContainer img,
+#bienvenidoContainer img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos para el botón de menú en dispositivos móviles */
+#mobileMenuBtn {
+    display: none; /* Inicialmente oculto en pantallas no móviles */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #fff;
+    margin: 0 10px;
+}
+
+/* Estilos para el menú desplegable en dispositivos móviles */
+#mobileNav {
+    display: none;
+    position: fixed; /* Cambiado de absolute a fixed para mantener la posición */
+    width: 100%; /* Ajustado el ancho al 100% */
+    text-align: center;
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 3;
+    top: 50px; /* Ajusta la posición superior según sea necesario */
+    left: 0; /* Ajusta la posición izquierda según sea necesario */
+}
+
+#mobileNav button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 0;
+    border: none;
+    background-color: #444;
+    color: #fff;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
+
+#mobileNav button:hover {
+    background-color: #555; /* Cambia el color al pasar el mouse sobre el botón */
+}
+
+/* Media Query para dispositivos móviles */
+@media only screen and (max-width: 768px) {
+    nav button {
+        display: none; /* Oculta los botones en pantallas móviles */
+    }
+
+    #mobileMenuBtn {
+        display: block; /* Muestra el botón de menú en pantallas móviles */
+    }
+
+    #mobileNav {
+        display: none; /* Oculta el menú desplegable en pantallas no móviles */
+    }
+
+    footer {
+        display: none; /* Oculta el footer en dispositivos móviles */
+    }
+
+    #fotoContainer {
+        max-width: 100%;
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-top: 20px;
+    }
+}
+
+/* Estilo para los enlaces */
+a {
+    color: #3498db; /* Azul más claro */
+    text-decoration: none;
+    transition: color 0.3s; /* Agregado para la transición de color al pasar el ratón */
+}
+
+a:visited {
+    color: #3498db; /* Azul más claro para enlaces visitados */
+}
+
+a:hover {
+    color: #e67e22; /* Naranja claro al pasar el ratón */
+}
+
+a:active {
+    color: #e67e22; /* Naranja claro cuando se pulsa */
+}
+
