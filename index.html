@@ -12,14 +12,24 @@
         <p>Desarrollador de Aplicaciones Multiplataforma</p>
     </header>
 
-        <nav>
-        <button id="btnDatosPersonales" onclick="mostrarContenido('datosPersonales')">Datos Personales</button>
-        <button id="btnFormacionAcademica" onclick="mostrarContenido('formacionAcademica')">Formación Académica</button>
-        <button id="btnFormacionComplementaria" onclick="mostrarContenido('formacionComplementaria')">Formación Complementaria</button>
+	<nav>
+		<button id="mobileMenuBtn" onclick="toggleMobileMenu()">☰ Menú</button>
+		<button id="btnDatosPersonales" onclick="mostrarContenido('datosPersonales')">Datos Personales</button>
+		<button id="btnFormacionAcademica" onclick="mostrarContenido('formacionAcademica')">Formación Académica</button>
+		<button id="btnFormacionComplementaria" onclick="mostrarContenido('formacionComplementaria')">Formación Complementaria</button>
 		<button id="btnExperienciaLaboral" onclick="mostrarContenido('experienciaLaboral')">Experiencia Laboral</button>
-        <button id="btnDatosInteres" onclick="mostrarContenido('datosInteres')">Datos de Interés</button>
-        <button id="btnGitHup" onclick="mostrarContenido('gitHup')">Direcciones GitHup</button>
-    </nav>
+		<button id="btnDatosInteres" onclick="mostrarContenido('datosInteres')">Datos de Interés</button>
+		<button id="btnGitHup" onclick="mostrarContenido('gitHup')">Direcciones GitHup</button>
+	</nav>
+
+	<div id="mobileNav">
+		<button onclick="mostrarContenido('datosPersonales')">Datos Personales</button>
+		<button onclick="mostrarContenido('formacionAcademica')">Formación Académica</button>
+		<button onclick="mostrarContenido('formacionComplementaria')">Formación Complementaria</button>
+		<button onclick="mostrarContenido('experienciaLaboral')">Experiencia Laboral</button>
+		<button onclick="mostrarContenido('datosInteres')">Datos de Interés</button>
+		<button onclick="mostrarContenido('gitHup')">Direcciones GitHup</button>
+	</div>
 
     <section id="contenido" class="contenido-inicial">
         <h2>¡Bienvenido a mi Curriculum!</h2>
@@ -31,10 +41,10 @@
 
 	<section id="datosPersonales" class="contenido">
 		<h2>Datos Personales</h2>
-		<p><strong>Nombre:</strong> Sergio Gonzalez Montero</p>
+		<p><strong>Nombre:</strong> Sergio González Montero</p>
 		<p><strong>Teléfono:</strong> +34 622 506 295</p>
 		<p><strong>Correo Electrónico:</strong> gonmonsergio@gmail.com</p>
-		<p><strong>Linkedin:</strong> <a href="https://www.linkedin.com/in/sergio-gonzález-montero-19827b63/">linkedin.com/sergio</a></p>
+		<p><strong>Linkedin:</strong> <a href="https://www.linkedin.com/in/sergio-gonzález-montero-19827b63/" target="_blank">linkedin.com/sergio</a></p>
 		<p><strong>Dirección:</strong> Madrid, España</p>
 		<div id="fotoContainer">
 			<img src=".\recursos\images\foto.png" alt="Mi Foto">
