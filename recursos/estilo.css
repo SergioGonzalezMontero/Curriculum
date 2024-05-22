@@ -1,77 +1,86 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #1c1c1c;
+    background-color: #1c1c1c; /* Azul oscuro */
     color: #fff;
     margin: 0;
     padding: 0;
     transition: background-color 0.5s;
     overflow-x: hidden;
     overflow-y: auto;
+    margin-top: 60px; /* Ajusta según la altura de la barra de navegación */
 }
 
 /* Estilos para el encabezado (header) */
 header {
-    background-color: #c0392b; /* Rojo más oscuro */
+    background-color: #2980b9; /* Azul moderado */
     color: #ecf0f1; /* Blanco antiguo */
     text-align: center;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1000;
 }
 
-h1 {
-    font-size: 2em; /* Ajuste del tamaño del encabezado para dispositivos móviles */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    margin: 0;
+p{
+	font-weight: bold;
 }
 
-p {
-    font-size: 1em; /* Ajuste del tamaño del párrafo para dispositivos móviles */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-    margin: 10px 0;
+/* Estilos para los enlaces */
+a:link {
+    color: white; /* Color blanco para enlaces no visitados */
+}
+
+a:visited {
+    color: white; /* Color blanco para enlaces visitados */
+}
+
+a:hover {
+    color: white; /* Color blanco cuando se pasa el ratón por encima */
+}
+
+a:active {
+    color: white; /* Color blanco cuando se hace clic en el enlace */
 }
 
 /* Estilos para la barra de navegación (nav) */
 nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
-    flex-wrap: wrap; /* Permite que los botones se envuelvan en dispositivos más pequeños */
-    justify-content: center; /* Centra los elementos horizontalmente */
-    background-color: #e74c3c;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #3498db; /* Azul brillante */
     padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Asegura que la barra de navegación esté por encima del resto de los elementos */
 }
 
 nav button {
-    padding: 12px;
+    padding: 8px 16px; /* Ajusta el relleno de los botones según sea necesario */
     cursor: pointer;
     border: none;
-    background-color: #d35400;
+    background-color: #2980b9; /* Azul moderado */
     color: #fff;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s, color 0.3s; /* Agregué color a las transiciones */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    font-size: 1em; /* Ajuste del tamaño del botón para dispositivos móviles */
-    margin: 5px; /* Ajuste del margen entre botones para dispositivos móviles */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    font-size: 1em; /* Ajusta el tamaño del texto de los botones */
 }
 
 nav button:active,
-nav button:focus {
-    transform: scale(1.2);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 1);
-    background-color: #9b2c00;
-}
-
+nav button:focus,
 nav button:hover {
-    background-color: #a04000;
     transform: scale(1.2);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 1);
-    color: #fff;
+    background-color: #1a5276; /* Azul más oscuro */
 }
 
 /* Estilos para las secciones */
 section {
     margin: 20px auto;
     display: none;
-    background-color: #333;
+    background-color: #34495e; /* Azul grisáceo */
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s, width 0.3s;
@@ -79,40 +88,9 @@ section {
     width: 100%;
 }
 
-h2 {
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-}
-
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #c0392b;
-    color: #fff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-/* Oculta todas las secciones, excepto la inicial */
-#datosPersonales,
-#formacionAcademica,
-#experienciaLaboral,
-#datosInteres,
-#gitUp {
-    display: none;
-}
-
-/* Estilos para la sección que ocupa todo el ancho */
-#contenido {
-    width: calc(100% - 20px); /* Ajuste del ancho del contenedor para dispositivos móviles */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-/* Estilo para el título expandido */
+/* Estilos para el título expandido */
 #contenido.expandido h2 {
-    font-size: 2em; /* Ajuste del tamaño del encabezado expandido para dispositivos móviles */
+    font-size: 2.5em;
     color: #fff;
     border-bottom: 2px solid #fff;
     padding-bottom: 10px;
@@ -121,22 +99,21 @@ footer {
 }
 
 #contenido.expandido p {
-    font-size: 1em; /* Ajuste del tamaño del párrafo expandido para dispositivos móviles */
+    font-size: 1.2em;
 }
 
 /* Estilo para la foto en Datos Personales */
-
 #datosPersonales {
     position: relative;
 }
 
 #fotoContainer {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    position: relative;
+    margin: 20px auto; /* Centra la foto */
     opacity: 0;
     transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
-    width: 250px; /* Ajusta el ancho del contenedor de la foto para dispositivos móviles */
+    width: 100%;
+    max-width: 400px;
     height: auto;
     overflow: hidden;
     border-radius: 5px;
@@ -160,7 +137,6 @@ footer {
 #interesContainer,
 #bienvenidoContainer {
     display: flex;
-    flex-wrap: wrap; /* Permite que las imágenes se envuelvan en dispositivos más pequeños */
     justify-content: center;
     align-items: center;
     margin-top: 20px;
@@ -172,4 +148,105 @@ footer {
 #bienvenidoContainer img {
     max-width: 100%;
     height: auto;
+}
+
+/* Media Query para dispositivos móviles */
+@media only screen and (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Cambia la dirección de la flexbox a columna */
+        align-items: center; /* Centra los elementos en la columna */
+    }
+
+    nav button {
+        display: none; /* Oculta los botones en dispositivos móviles */
+    }
+}
+
+/* Estilos adicionales para pantallas grandes */
+@media only screen and (min-width: 769px) {
+    nav select {
+        display: none; /* Oculta el menú desplegable en pantallas grandes */
+    }
+
+    nav button {
+        display: inline-block; /* Muestra los botones en pantallas grandes */
+        margin: 5px;
+    }
+}
+
+/* Estilos para el contenedor de columnas */
+.column-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Estilos para cada columna */
+.column {
+    flex: 1;
+    margin: 10px;
+}
+
+/* Asegura que las secciones tengan suficiente espacio */
+.contenido {
+    margin: 20px auto;
+    background-color: #34495e; /* Azul grisáceo */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+    width: 100%;
+}
+
+/* Estilos para el contenedor de imagen */
+#formacionContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#formacionContainer img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #2980b9; /* Azul moderado */
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000; 
+}
+
+/* Asegura que las secciones tengan suficiente espacio */
+.contenido {
+    margin: 20px auto;
+    background-color: #34495e; /* Azul grisáceo */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+    width: 100%;
+}
+.contenido h2 {
+    color: #ffcc00; /* Cambia el color del título */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Agrega un efecto de sombra al texto */
+}
+
+.contenido h3 {
+    color: #ffcc00; /* Cambia el color de los subtítulos */
+}
+
+.contenido p {
+    color: #bdc3c7; /* Cambia el color del texto */
+    font-size: 1.1em; /* Ajusta el tamaño de la fuente */
+    line-height: 1.6; /* Ajusta el espaciado entre líneas */
+}
+
+.contenido img {
+    border-radius: 10px; /* Agrega bordes redondeados a las imágenes */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Agrega una sombra a las imágenes */
 }
